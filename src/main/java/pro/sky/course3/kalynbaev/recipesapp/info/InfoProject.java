@@ -9,12 +9,12 @@ public class InfoProject {
     private String author;
     private String title;
     private LocalDate localDate;
-    private StringBuilder description;
+    private String description;
 
     public InfoProject(String author,
                        String title,
                        LocalDate localDate,
-                       StringBuilder description) throws IncorrectArgumentException {
+                       String description) throws IncorrectArgumentException {
         setAuthor(author);
         setTitle(title);
         setLocalDate(localDate);
@@ -57,12 +57,11 @@ public class InfoProject {
         }
     }
 
-
-    public StringBuilder getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(StringBuilder description) throws IncorrectArgumentException {
+    public void setDescription(String description) throws IncorrectArgumentException {
         if (description != null) {
             this.description = description;
         } else {
@@ -75,7 +74,10 @@ public class InfoProject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InfoProject that = (InfoProject) o;
-        return Objects.equals(author, that.author) && Objects.equals(title, that.title) && Objects.equals(localDate, that.localDate) && Objects.equals(description, that.description);
+        return Objects.equals(author, that.author)
+                && Objects.equals(title, that.title)
+                && Objects.equals(localDate, that.localDate)
+                && Objects.equals(description, that.description);
     }
 
     @Override
@@ -85,7 +87,7 @@ public class InfoProject {
 
     @Override
     public String toString() {
-        return  "Автор проекта: " + author + ". " + "\n" +
+        return "Автор проекта: " + author + ". " + "\n" +
                 "Название проекта: " + title + ". " + "\n" +
                 "Дата создания проекта: " + localDate + ". " + "\n" +
                 "Описание проекта: " + description + "\n";
