@@ -23,11 +23,11 @@ public class FirstController {
         final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("проект позволяет создавать, ");
-        stringBuilder.append("редактировать, получать, отправлять и удалять ");
-        stringBuilder.append("рецепты различных блюд. ");
-        stringBuilder.append("Для создания проекта были использованы следующие ");
-        stringBuilder.append("технологии: Spring Boot DevTools, Lombok, Spring Web. ");
+        stringBuilder.append("проект позволяет создавать, ").append("\n");
+        stringBuilder.append("редактировать, получать, отправлять и удалять ").append("\n");
+        stringBuilder.append("рецепты различных блюд. ").append("\n");
+        stringBuilder.append("Для создания проекта были использованы следующие ").append("\n");
+        stringBuilder.append("технологии: Spring Boot DevTools, Lombok, Spring Web. ").append("\n");
         stringBuilder.append("Проект написан на языке Java. ");
 
         InfoProject infoProject = new InfoProject("Юрий",
