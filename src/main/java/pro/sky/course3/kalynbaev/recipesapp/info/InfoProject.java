@@ -1,5 +1,7 @@
 package pro.sky.course3.kalynbaev.recipesapp.info;
 
+import pro.sky.course3.kalynbaev.recipesapp.exception.IncorrectArgumentException;
+
 import java.time.LocalDate;
 import java.util.*;
 
@@ -12,8 +14,7 @@ public class InfoProject {
     public InfoProject(String author,
                        String title,
                        LocalDate localDate,
-                       StringBuilder description)
-    {
+                       StringBuilder description) throws IncorrectArgumentException {
         setAuthor(author);
         setTitle(title);
         setLocalDate(localDate);
@@ -24,24 +25,36 @@ public class InfoProject {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String author) throws IncorrectArgumentException {
+        if (author != null && !author.isEmpty()) {
+            this.author = author;
+        } else {
+            throw new IncorrectArgumentException("автор проекта");
+        }
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String title) throws IncorrectArgumentException {
+        if (title != null && !title.isEmpty()) {
+            this.title = title;
+        } else {
+            throw new IncorrectArgumentException("название проекта");
+        }
     }
 
     public LocalDate getLocalDate() {
         return localDate;
     }
 
-    public void setLocalDate(LocalDate localDate) {
-        this.localDate = localDate;
+    public void setLocalDate(LocalDate localDate) throws IncorrectArgumentException {
+        if (localDate != null) {
+            this.localDate = localDate;
+        } else {
+            throw new IncorrectArgumentException("дата создания проекта");
+        }
     }
 
 
@@ -49,8 +62,12 @@ public class InfoProject {
         return description;
     }
 
-    public void setDescription(StringBuilder description) {
-        this.description = description;
+    public void setDescription(StringBuilder description) throws IncorrectArgumentException {
+        if (description != null) {
+            this.description = description;
+        } else {
+            throw new IncorrectArgumentException("описание проекта");
+        }
     }
 
     @Override
@@ -68,11 +85,10 @@ public class InfoProject {
 
     @Override
     public String toString() {
-        return "InfoProject{" +
-                "author='" + author + '\'' +
-                ", title='" + title + '\'' +
-                ", localDate=" + localDate +
-                ", description='" + description + '\'' +
-                '}';
+        return "Информация о проекте: \n" +
+                "автор проекта: " + author + "\n" +
+                "название проекта: " + title + "\n" +
+                "дата создания проекта: " + localDate + "\n" +
+                "описание проекта: " + description + "\n";
     }
 }
