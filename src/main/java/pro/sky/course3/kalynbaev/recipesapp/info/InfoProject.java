@@ -87,9 +87,9 @@ public class InfoProject {
 
     @Override
     public String toString() {
-        return "Автор проекта: " + author + ". " + "\n" +
-                "Название проекта: " + title + ". " + "\n" +
-                "Дата создания проекта: " + localDate + ". " + "\n" +
-                "Описание проекта: " + description + "\n";
+        return "Автор проекта: " + author + ". " + "</br>" +
+                "Название проекта: " + title + ". " + "</br>" +
+                "Дата создания проекта: " + localDate + ". " + "</br>" +
+                "Описание проекта: </br>" + description;
     }
 }

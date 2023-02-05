@@ -18,12 +18,12 @@ public class FirstController {
     public String getInfoAboutProject() throws IncorrectArgumentException {
 
         String stringDescription = null;
-        stringDescription = "проект позволяет создавать,\n" +
-                " редактировать, получать, отправлять и удалять\n" +
-                " рецепты различных блюд.\n" +
-                " Для создания проекта были использованы следующие\n" +
-                " технологии: Spring Boot DevTools, Lombok, Spring Web.\n" +
-                " Проект написан на языке Java.\n";
+        stringDescription = "- проект позволяет создавать, </br>" +
+                " редактировать, получать, отправлять и удалять </br>" +
+                " рецепты различных блюд. </br>" +
+                " - для создания проекта были использованы следующие </br>" +
+                " технологии: Spring Boot DevTools, Lombok, Spring Web. </br>" +
+                " - проект написан на языке Java.";
 
         InfoProject infoProject = new InfoProject("Юрий",
                 "Рецепты",
