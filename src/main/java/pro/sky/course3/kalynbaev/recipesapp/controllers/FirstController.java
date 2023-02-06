@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 @RestController
 public class FirstController {
-    @GetMapping("/")
+    @GetMapping
     public String runningApplication() {
         return "Приложение запущено";
     }
